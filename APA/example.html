@@ -38,6 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="example_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="example_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="example_files/libs/bootstrap/bootstrap-bed72a092cdb64672ef27258cf50e527.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="example_files/libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
+<script src="example_files/libs/tabwid-1.1.3/tabwid.js"></script>
+
 
 
 <link rel="stylesheet" href="_extensions/wjschne/apaquarto/apa.css">
@@ -47,7 +51,14 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#above-is-the-template---this-works-just-fine.-below-comes-my-table" id="toc-above-is-the-template---this-works-just-fine.-below-comes-my-table" class="nav-link active" data-scroll-target="#above-is-the-template---this-works-just-fine.-below-comes-my-table">Above is the template - this works just fine. Below comes my table:</a></li>
+  <li><a href="#until-here-everything-works-fine.-as-soon-as-i-add-the-cross-reference-here-i-get-the-error." id="toc-until-here-everything-works-fine.-as-soon-as-i-add-the-cross-reference-here-i-get-the-error." class="nav-link" data-scroll-target="#until-here-everything-works-fine.-as-soon-as-i-add-the-cross-reference-here-i-get-the-error.">Until here, everything works fine. As soon as I add the cross reference here, I get the error.</a></li>
+  </ul>
+</nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -96,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-anchor-id="displaying-tables">Displaying Tables</h2>
 <p>We can make a table the same way as a figure. Generating a table that conforms to APA format in all document formats can be tricky. When the table is simple, the <code>kable</code> function from knitr works well. Feel free to experiment with different methods, but I have found that David Gohel’s <a href="https://davidgohel.github.io/flextable/">flextable</a> to be the best option when I need something more complex.</p>
 <div class="cell FigureWithNote" data-apa-note="The note below the table." prefix="" data-tblnum="1" data-custom-style="FigureWithNote">
-<div id="tbl-mytable" class="cell quarto-float quarto-figure quarto-figure-center" prefix="" data-tblnum="1" data-apa-note="The note below the table.">
+<div id="tbl-mytable" class="cell quarto-float quarto-figure quarto-figure-center" prefix="" data-apa-note="The note below the table." data-tblnum="1">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mytable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="FigureTitle" data-custom-style="FigureTitle">
@@ -143,56 +154,19 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>To refer to this table in text, use the <code>@</code> symbol followed by the reference label like so: As seen in <a href="#tbl-mytable" class="quarto-xref" aria-expanded="false">Table&nbsp;1</a>, the first few numbers and letters of the alphabet are displayed.</p>
-<p>In <a href="#tbl-mymarkdowntable" class="quarto-xref" aria-expanded="false">Table&nbsp;2</a>, there is an example of a plain markdown table with a note below it.</p>
-<div id="tbl-mymarkdowntable" class="quarto-float quarto-figure quarto-figure-center FigureWithNote" prefix="" data-tblnum="2" data-apa-note="This is a note below the markdown table." data-custom-style="FigureWithNote">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mymarkdowntable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="FigureTitle" data-custom-style="FigureTitle">
-<p>Table&nbsp;2</p>
-</div>
-<div class="Caption" data-custom-style="Caption">
-<p>Table Caption of a Markdown Table</p>
-</div>
-</figcaption>
-<div aria-describedby="tbl-mymarkdowntable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Default</th>
-<th style="text-align: left;">Left</th>
-<th style="text-align: right;">Right</th>
-<th style="text-align: center;">Center</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>12</td>
-<td style="text-align: left;">12</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: center;">12</td>
-</tr>
-<tr class="even">
-<td>123</td>
-<td style="text-align: left;">123</td>
-<td style="text-align: right;">123</td>
-<td style="text-align: center;">123</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<div class="FigureNote" data-custom-style="FigureNote">
-<p><em>Note</em>. This is a note below the markdown table.</p>
-</div>
-<p>What if you want the tables and figures to be at the end of the document? In the .pdf format, you can set the <code>floatsintext</code> option to false. For .html and .docx documents, there is not yet an automatic way to put tables and figures at the end. You can, of course, just put them all at the end, in order. The reference labels will work no matter where they are in the text.</p>
 </section>
+</section>
+<section id="above-is-the-template---this-works-just-fine.-below-comes-my-table" class="level1">
+<h1>Above is the template - this works just fine. Below comes my table:</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-32243588{table-layout:auto;}.cl-321cff20{font-family:'Times New Roman';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-321fd8da{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-321ff81a{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-321ff824{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-321ff825{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-32243588"><thead><tr style="overflow-wrap:break-word;"><th class="cl-321ff81a"><p class="cl-321fd8da"><span class="cl-321cff20">Characteristic</span></p></th><th class="cl-321ff81a"><p class="cl-321fd8da"><span class="cl-321cff20">Overall  </span><br><span class="cl-321cff20">N = 29</span></p></th><th class="cl-321ff81a"><p class="cl-321fd8da"><span class="cl-321cff20">Divers  </span><br><span class="cl-321cff20">N = 2</span></p></th><th class="cl-321ff81a"><p class="cl-321fd8da"><span class="cl-321cff20">Männlich  </span><br><span class="cl-321cff20">N = 8</span></p></th><th class="cl-321ff81a"><p class="cl-321fd8da"><span class="cl-321cff20">Weiblich  </span><br><span class="cl-321cff20">N = 19</span></p></th><th class="cl-321ff81a"><p class="cl-321fd8da"><span class="cl-321cff20">p-value</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Age</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">31 (24, 43)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">22 (20, 24)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">40 (26, 54)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">31 (22, 40)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0.14</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Sport</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0.8</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Body &amp; Mind Fitness</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (3.4%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (5.3%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">CrossFit/Funktionale Fitness</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (3.4%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (5.3%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Kanurennsport</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (3.4%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (5.3%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Kraftsport</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">5 (17%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">2 (25%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">3 (16%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Laufen</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">10 (34%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (50%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">3 (38%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">6 (32%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Parkour</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (3.4%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (5.3%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Partnerakrobatik</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (3.4%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (13%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Schwimmen</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (3.4%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (50%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Stand Up Paddeling</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (3.4%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (5.3%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">Trampolinturnen</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (3.4%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20">1 (5.3%)</span></p></td><td class="cl-321ff824"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-321ff825"><p class="cl-321fd8da"><span class="cl-321cff20">Triathlon</span></p></td><td class="cl-321ff825"><p class="cl-321fd8da"><span class="cl-321cff20">6 (21%)</span></p></td><td class="cl-321ff825"><p class="cl-321fd8da"><span class="cl-321cff20">0 (0%)</span></p></td><td class="cl-321ff825"><p class="cl-321fd8da"><span class="cl-321cff20">2 (25%)</span></p></td><td class="cl-321ff825"><p class="cl-321fd8da"><span class="cl-321cff20">4 (21%)</span></p></td><td class="cl-321ff825"><p class="cl-321fd8da"><span class="cl-321cff20"></span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</section>
+<section id="until-here-everything-works-fine.-as-soon-as-i-add-the-cross-reference-here-i-get-the-error." class="level1">
+<h1>Until here, everything works fine. As soon as I add the cross reference here, I get the error.</h1>
+<!-- @tbl-demogrtable -->
 </section>
 
 </main>

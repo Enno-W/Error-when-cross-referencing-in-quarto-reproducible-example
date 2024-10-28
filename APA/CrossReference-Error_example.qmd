@@ -150,7 +150,7 @@ tibble(Numbers = seq(1,4), Letters = LETTERS[seq(Numbers)]) %>%
 
 To refer to this table in text, use the `@` symbol followed by the reference label like so: As seen in @tbl-mytable, the first few numbers and letters of the alphabet are displayed.
 
-# Above is the template, here the crossreference "@tbl-mytable" works fine - below is my code to arrive at the table I have problems with.  
+# Above is the template - this works just fine. Below comes my table: 
 
 ```{r}
 ##### Packages ####
@@ -341,12 +341,12 @@ demographicstable<- data %>%
 ```{r apatb-demogrtable}
 
 #| label: tbl-demogrtable
-#| tbl-cap: blabla
-#| apa-note: blabla
+#| tbl-cap: Tabelle der Absoluten und Relativen Häufigkeiten Demografischer Variablen in der Stichprobe
+#| apa-note: Die Sportarten wurden in einer offenen Frage erfragt. Eine männliche Person gab zwei Sportarten an — Kraftsport und Laufen. Es wurde hier die erste Antwort (Kraftsport) gezählt. 
 #| 
 demographicstable
 
 ```
 
 # Until here, everything works fine. As soon as I add the cross reference here, I get the error.
-<!-- @tbl-demogrtable -->
+@tbl-demogrtable
