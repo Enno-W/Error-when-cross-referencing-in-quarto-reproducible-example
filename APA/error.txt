@@ -1,0 +1,476 @@
+processing file: CrossReference-Error_example.qmd
+                                                                                                              
+output file: CrossReference-Error_example.knit.md
+
+pandoc 
+  to: html
+  output-file: CrossReference-Error_example.html
+  standalone: true
+  section-divs: true
+  html-math-method: katex
+  wrap: none
+  default-image-extension: png
+  citeproc: false
+  toc: true
+  css:
+    - _extensions/wjschne/apaquarto/apa.css
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  fig-cap-location: top
+  tbl-cap-location: top
+  cap-location: top
+  csl: _extensions/wjschne/apaquarto/apa.csl
+  suppress-title-page: false
+  suppress-title-page-number: false
+  suppress-title: false
+  suppress-short-title: false
+  suppress-author: false
+  suppress-affiliation: false
+  suppress-author-note: false
+  suppress-orcid: false
+  suppress-status-change-paragraph: false
+  suppress-disclosures-paragraph: false
+  suppress-credit-statement: false
+  suppress-corresponding-paragraph: false
+  suppress-corresponding-group: false
+  suppress-corresponding-department: false
+  suppress-corresponding-affiliation-name: false
+  suppress-corresponding-address: false
+  suppress-corresponding-city: false
+  suppress-corresponding-region: false
+  suppress-corresponding-postal-code: false
+  suppress-corresponding-email: false
+  suppress-abstract: false
+  suppress-keywords: false
+  suppress-title-introduction: false
+  no-ampersand-parenthetical: false
+  toc-location: left
+  anchor-sections: false
+  grid:
+    body-width: 7in
+  theme:
+    - litera
+    - _extensions/wjschne/apaquarto/apa.scss
+  knitr:
+    opts_chunk:
+      dev: svglite
+  title: Using Quarto to Generate Documents in APA Style (7th Edition)
+  shorttitle: Template for the apaquarto Extension
+  author:
+    - name: Ana Fulano
+      corresponding: true
+      orcid: 0000-0000-0000-0001
+      email: sm@example.org
+      url: https://example.org/
+      roles:
+        - conceptualization
+        - writing
+      affiliations:
+        - id: id1
+          name: Ana and Blanca's University
+          group: Clinical Psychology Program
+          department: Department of Psychology
+          address: 1234 Capital St.
+          city: Albany
+          region: NY
+          country: USA
+          postal-code: 12084-1234
+    - name: Blanca Zutano
+      orcid: 0000-0000-0000-0002
+      roles:
+        - project administration
+        - formal analysis
+      affiliations:
+        - ref: id1
+    - name: Carina Mengano
+      orcid: 0000-0000-0000-0003
+      deceased: true
+      roles:
+        - formal analysis
+        - writing
+      affiliations:
+        - name: Carina's Primary Affiliation
+        - name: Carina's Secondary Affiliation
+    - name:
+        - given: Dolorita C.
+          family: Perengano
+      orcid: 0000-0000-0000-0004
+      roles:
+        - writing
+        - methodology
+        - formal analysis
+      affiliations:
+        - city: Buffalo
+          region: NY
+  author-note:
+    status-changes:
+      affiliation-change: Carina Mengano is now at Generic University.
+      deceased: null
+    disclosures:
+      study-registration: null
+      data-sharing: null
+      related-report: null
+      conflict-of-interest: The authors have no conflicts of interest to disclose.
+      financial-support: null
+      gratitude: null
+      authorship-agreements: null
+  abstract: This document is a template demonstrating the apaquarto format.
+  keywords:
+    - keyword1
+    - keyword2
+    - keyword3
+  floatsintext: true
+  numbered-lines: false
+  bibliography:
+    - bibliography.bib
+  mask: false
+  masked-citations:
+    - schneider2012cattell
+    - schneider2015intelligence
+  
+{
+  active-filters: {
+    crossref: true
+    normalization: true
+  }
+  callout-caution-title: "Caution"
+  callout-important-title: "Important"
+  callout-note-title: "Note"
+  callout-tip-title: "Tip"
+  callout-warning-title: "Warning"
+  code-fold: "none"
+  code-summary: "Code"
+  crossref-apx-prefix: "Appendix"
+  crossref-ch-prefix: "Chapter"
+  crossref-cnj-prefix: "Conjecture"
+  crossref-cnj-title: "Conjecture"
+  crossref-cor-prefix: "Corollary"
+  crossref-cor-title: "Corollary"
+  crossref-def-prefix: "Definition"
+  crossref-def-title: "Definition"
+  crossref-eq-prefix: "Equation"
+  crossref-exm-prefix: "Example"
+  crossref-exm-title: "Example"
+  crossref-exr-prefix: "Exercise"
+  crossref-exr-title: "Exercise"
+  crossref-fig-prefix: "Figure"
+  crossref-fig-title: "Figure"
+  crossref-index-file: "C:/Users/enno_/AppData/Local/RStudio/quarto-crossref/FE66473B"
+  crossref-lem-prefix: "Lemma"
+  crossref-lem-title: "Lemma"
+  crossref-lof-title: "List of Figures"
+  crossref-lol-title: "List of Listings"
+  crossref-lot-title: "List of Tables"
+  crossref-lst-prefix: "Listing"
+  crossref-lst-title: "Listing"
+  crossref-prp-prefix: "Proposition"
+  crossref-prp-title: "Proposition"
+  crossref-sec-prefix: "Section"
+  crossref-tbl-prefix: "Table"
+  crossref-tbl-title: "Table"
+  crossref-thm-prefix: "Theorem"
+  crossref-thm-title: "Theorem"
+  environment-proof-title: "Proof"
+  environment-remark-title: "Remark"
+  environment-solution-title: "Solution"
+  execution-engine: "knitr"
+  fig-align: "default"
+  fig-responsive: true
+  format-identifier: {
+    base-format: "html"
+    display-name: "HTML"
+    extension-name: "apaquarto"
+    target-format: "apaquarto-html"
+  }
+  has-bootstrap: true
+  header-includes: {}
+  html-math-method: "katex"
+  include-after: {}
+  include-after-body: {
+    [1] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/4727c25b0b0f61a3.html"
+    [2] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/b04b09f9c7ef9d81"
+    [3] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/bafb923664b6ec3e.html"
+  }
+  include-before: {}
+  include-before-body: {
+    [1] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/691238283171f835.html"
+  }
+  include-in-header: {
+    [1] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/5fa065cdee68c136/file2cd866c8813"
+  }
+  language: {
+    appendix-attribution-bibtex: "BibTeX citation:"
+    appendix-attribution-cite-as: "For attribution, please cite this work as:"
+    appendix-view-license: "View License"
+    article-notebook-label: "Article Notebook"
+    back-to-top: "Back to top"
+    callout-caution-title: "Caution"
+    callout-important-title: "Important"
+    callout-note-title: "Note"
+    callout-tip-title: "Tip"
+    callout-warning-title: "Warning"
+    code-line: "Line"
+    code-lines: "Lines"
+    code-links-title: "Code Links"
+    code-summary: "Code"
+    code-tools-hide-all-code: "Hide All Code"
+    code-tools-menu-caption: "Code"
+    code-tools-show-all-code: "Show All Code"
+    code-tools-source-code: "Source Code"
+    code-tools-view-source: "View Source"
+    copy-button-tooltip: "Copy to Clipboard"
+    copy-button-tooltip-success: "Copied!"
+    crossref-apx-prefix: "Appendix"
+    crossref-ch-prefix: "Chapter"
+    crossref-cnj-title: "Conjecture"
+    crossref-cor-title: "Corollary"
+    crossref-def-title: "Definition"
+    crossref-eq-prefix: "Equation"
+    crossref-exm-title: "Example"
+    crossref-exr-title: "Exercise"
+    crossref-fig-title: "Figure"
+    crossref-lem-title: "Lemma"
+    crossref-lof-title: "List of Figures"
+    crossref-lol-title: "List of Listings"
+    crossref-lot-title: "List of Tables"
+    crossref-lst-title: "Listing"
+    crossref-prp-title: "Proposition"
+    crossref-sec-prefix: "Section"
+    crossref-tbl-title: "Table"
+    crossref-thm-title: "Theorem"
+    draft: "Draft"
+    environment-proof-title: "Proof"
+    environment-remark-title: "Remark"
+    environment-solution-title: "Solution"
+    launch-binder-title: "Launch Binder"
+    launch-dev-container-title: "Launch Dev Container"
+    listing-page-category-all: "All"
+    listing-page-field-author: "Author"
+    listing-page-field-categories: "Categories"
+    listing-page-field-date: "Date"
+    listing-page-field-description: "Description"
+    listing-page-field-filemodified: "Modified"
+    listing-page-field-filename: "File Name"
+    listing-page-field-readingtime: "Reading Time"
+    listing-page-field-subtitle: "Subtitle"
+    listing-page-field-title: "Title"
+    listing-page-field-wordcount: "Word Count"
+    listing-page-filter: "Filter"
+    listing-page-minutes-compact: "{0} min"
+    listing-page-no-matches: "No matching items"
+    listing-page-order-by: "Order By"
+    listing-page-order-by-date-asc: "Oldest"
+    listing-page-order-by-date-desc: "Newest"
+    listing-page-order-by-default: "Default"
+    listing-page-order-by-number-asc: "Low to High"
+    listing-page-order-by-number-desc: "High to Low"
+    listing-page-words: "{0} words"
+    manuscript-meca-bundle: "MECA Bundle"
+    notebook-preview-back: "Back to Article"
+    notebook-preview-download: "Download Notebook"
+    notebook-preview-download-src: "Download Source"
+    other-links-title: "Other Links"
+    related-formats-title: "Other Formats"
+    related-notebooks-title: "Notebooks"
+    repo-action-links-edit: "Edit this page"
+    repo-action-links-issue: "Report an issue"
+    repo-action-links-source: "View source"
+    search-clear-button-title: "Clear"
+    search-copy-link-title: "Copy link to search"
+    search-detached-cancel-button-title: "Cancel"
+    search-hide-matches-text: "Hide additional matches"
+    search-label: "Search"
+    search-matching-documents-text: "matching documents"
+    search-more-match-text: "more match in this document"
+    search-more-matches-text: "more matches in this document"
+    search-no-results-text: "No results"
+    search-submit-button-title: "Submit"
+    search-text-placeholder: ""
+    section-title-abstract: "Abstract"
+    section-title-appendices: "Appendices"
+    section-title-citation: "Citation"
+    section-title-copyright: "Copyright"
+    section-title-footnotes: "Footnotes"
+    section-title-references: "References"
+    section-title-reuse: "Reuse"
+    source-notebooks-prefix: "Source"
+    title-block-affiliation-plural: "Affiliations"
+    title-block-affiliation-single: "Affiliation"
+    title-block-author-plural: "Authors"
+    title-block-author-single: "Author"
+    title-block-keywords: "Keywords"
+    title-block-modified: "Modified"
+    title-block-published: "Published"
+    toc-title-document: "Table of contents"
+    toc-title-website: "On this page"
+    toggle-dark-mode: "Toggle dark mode"
+    toggle-navigation: "Toggle navigation"
+    toggle-reader-mode: "Toggle reader mode"
+    toggle-section: "Toggle section"
+    toggle-sidebar: "Toggle sidebar navigation"
+    tools-download: "Download"
+    tools-share: "Share"
+  }
+  mediabag-dir: "CrossReference-Error_example_files\mediabag"
+  output-divs: true
+  pdf-engine: "pdflatex"
+  project-offset: "."
+  quarto-cli-path: "C:\Users\enno_\AppData\Local\Programs\Quarto\bin\quarto.exe"
+  quarto-environment: {
+    paths: {
+      Rscript: "C:\Program Files\R\R-4.4.1\bin\x64\Rscript.exe"
+    }
+  }
+  quarto-filters: {
+    afterQuartoFilters: {}
+    beforeQuartoFilters: {}
+    entryPoints: {
+      [1] {
+        at: "pre-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apalanguage.lua"
+      }
+      [2] {
+        at: "pre-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\crossrefprefix.lua"
+      }
+      [3] {
+        at: "pre-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafloatstoend.lua"
+      }
+      [4] {
+        at: "pre-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafgtb.lua"
+      }
+      [5] {
+        at: "pre-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\journalmode.lua"
+      }
+      [6] {
+        at: "pre-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafigurewidthlatex.lua"
+      }
+      [7] {
+        at: "pre-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafigurelatex.lua"
+      }
+      [8] {
+        at: "pre-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaomitrefsdiv.lua"
+      }
+      [9] {
+        at: "post-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apamasked.lua"
+      }
+      [10] {
+        at: "post-ast"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apatwocolumnlatex.lua"
+      }
+      [11] {
+        at: "pre-quarto"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaheader.lua"
+      }
+      [12] {
+        at: "pre-quarto"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apastriptitle.lua"
+      }
+      [13] {
+        at: "pre-quarto"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\frontmatter.lua"
+      }
+      [14] {
+        at: "pre-quarto"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaquote.lua"
+      }
+      [15] {
+        at: "pre-quarto"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\latexnoindent.lua"
+      }
+      [16] {
+        at: "pre-quarto"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafigtblappendix.lua"
+      }
+      [17] {
+        at: "post-quarto"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafloatlatex.lua"
+      }
+      [18] {
+        at: "post-quarto"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaoneauthoraffiliation.lua"
+      }
+      [19] {
+        at: "post-render"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaextractfigure.lua"
+      }
+      [20] {
+        at: "post-render"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apanote.lua"
+      }
+      [21] {
+        at: "post-render"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafloat.lua"
+      }
+      [22] {
+        at: "post-render"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apacaption.lua"
+      }
+      [23] {
+        at: "post-render"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaafternote.lua"
+      }
+      [24] {
+        at: "post-render"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\citeprocr.lua"
+      }
+      [25] {
+        at: "post-render"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaandcite.lua"
+      }
+      [26] {
+        at: "post-render"
+        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaappendixlatex.lua"
+      }
+    }
+    quartoFilters: {
+      [1] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\filters\main.lua"
+    }
+  }
+  quarto-source: "CrossReference-Error_example.qmd"
+  quarto-version: "1.6.32"
+  quarto_profile: {}
+  results-file: "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/233f69c33e2aaa0e"
+  shortcodes: {
+    [1] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\extensions\quarto\kbd\kbd.lua"
+    [2] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\extensions\quarto\lipsum\lipsum.lua"
+    [3] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\extensions\quarto\placeholder\placeholder.lua"
+    [4] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\extensions\quarto\video\video.lua"
+  }
+  tbl-colwidths: "auto"
+  text-highlighting: true
+  timings-file: "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/8fa726135ca17465"
+  toc-title-document: "Table of contents"
+}
+Error running filter C:/Users/enno_/AppData/Local/Programs/Quarto/share/filters/main.lua:
+string expected, got nil
+	while retrieving function argument text
+	while retrieving arguments for function Str
+stack traceback:
+	...\APA\_extensions\wjschne\apaquarto\apafigtblappendix.lua:67: in function <...\APA\_extensions\wjschne\apaquarto\apafigtblappendix.lua:34>
+	[C]: in ?
+	[C]: in method 'walk'
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:558: in local 'checked_walk'
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:610: in function 'run_emulated_filter'
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1335: in local 'callback'
+	[string "..."]:1888: in field 'withScriptFile'
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1351: in upvalue 'run_emulated_filter_chain'
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1389: in function <...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1386>
+stack traceback:
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:558: in local 'checked_walk'
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:610: in function 'run_emulated_filter'
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1335: in local 'callback'
+	[string "..."]:1888: in field 'withScriptFile'
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1351: in upvalue 'run_emulated_filter_chain'
+	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1389: in function <...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1386>
