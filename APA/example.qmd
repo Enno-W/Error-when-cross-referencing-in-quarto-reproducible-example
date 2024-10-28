@@ -1,0 +1,352 @@
+---
+title: "Using Quarto to Generate Documents in APA Style (7th Edition)"
+# If blank, the running header is the title in upper case.
+shorttitle: "Template for the apaquarto Extension"
+# Set names and affiliations.
+# It is nice to specify everyone's orcid, if possible.
+# There can be only one corresponding author, but declaring one is optional.
+author:
+  - name: Ana Fulano
+    corresponding: true
+    orcid: 0000-0000-0000-0001
+    email: sm@example.org
+    url: https://example.org/
+    # Roles are optional. 
+    # Select from the CRediT: Contributor Roles Taxonomy https://credit.niso.org/
+    # conceptualization, data curation, formal Analysis, funding acquisition, investigation, 
+    # methodology, project administration, resources, software, supervision, validation, 
+    # visualization, writing, editing
+    roles:
+      - conceptualization
+      - writing
+    affiliations:
+      - id: id1
+        name: "Ana and Blanca's University"
+        group: Clinical Psychology Program
+        department: Department of Psychology
+        address: 1234 Capital St.
+        city: Albany
+        region: NY
+        country: USA
+        postal-code: 12084-1234
+  - name: Blanca Zutano
+    orcid: 0000-0000-0000-0002
+    roles:
+      - project administration
+      - formal analysis
+    affiliations: 
+      - ref: id1
+  - name: Carina Mengano
+    orcid: 0000-0000-0000-0003
+    deceased: true
+    roles:
+      - formal analysis
+      - writing
+    affiliations:
+      - name: "Carina's Primary Affiliation"
+      - name: "Carina's Secondary Affiliation"
+    # Because Dolorita is unaffiliated, specify her city instead
+  - name: 
+      - given: Dolorita C.
+        family: Perengano
+    orcid: 0000-0000-0000-0004
+    roles:
+      - writing
+      - methodology
+      - formal analysis
+    # List city and region/state for unaffiliated authors
+    affiliations:
+      - city: Buffalo
+        region: NY
+author-note:
+  status-changes: 
+    # Example: [Author name] is now at [affiliation].
+    affiliation-change: Carina Mengano is now at Generic University.
+    # Example: [Author name] is deceased.
+    deceased: ~
+  # Disclosures condensed to one paragraph, but you can start a field with two line breaks to break them up: \n\nNew Paragraph
+  disclosures:
+    # Example: This study was registered at X (Identifier Y).
+    study-registration: ~
+    # Acknowledge and cite data/materials to be shared.
+    data-sharing: ~
+    # Example: This article is based on data published in [Reference].
+    # Example: This article is based on the dissertation completed by [citation].  
+    related-report: ~
+    # Example: [Author name] has been a paid consultant for Corporation X, which funded this study.
+    conflict-of-interest: The authors have no conflicts of interest to disclose.
+    # Example: This study was supported by Grant [Grant Number] from [Funding Source].
+    financial-support: ~
+    # Example: The authors are grateful to [Person] for [Reason].
+    gratitude: ~
+    # Example. Because the authors are equal contributors, order of authorship was determined by a fair coin toss.
+    authorship-agreements: ~
+abstract: "This document is a template demonstrating the apaquarto format."
+# Put as many keywords at you like, separated by commmas (e.g., [reliability, validity, generalizability])
+keywords: [keyword1, keyword2, keyword3]
+# If true, tables and figures are mingled with the text instead of listed at the end of the document.
+floatsintext: true
+# Numbered lines (.pdf and .docx only)
+numbered-lines: false
+# File with references
+bibliography: bibliography.bib
+# Suppress title page
+suppress-title-page: false
+# Link citations to references
+link-citations: true
+# Masks references that appear in the masked-citations list
+mask: false
+masked-citations:
+  - schneider2012cattell
+  - schneider2015intelligence
+# Language options. See https://quarto.org/docs/authoring/language.html
+lang: en
+language:
+  citation-last-author-separator: "and"
+  citation-masked-author: "Masked Citation"
+  citation-masked-date: "n.d."
+  citation-masked-title: "Masked Title"
+  email: "Email"
+  title-block-author-note: "Author Note"
+  title-block-correspondence-note: "Correspondence concerning this article should be addressed to"
+  title-block-role-introduction: "Author roles were classified using the Contributor Role Taxonomy (CRediT; https://credit.niso.org/) as follows:"
+  references-meta-analysis: "References marked with an asterisk indicate studies included in the meta-analysis."
+format:
+  #apaquarto-docx: default
+  apaquarto-html: default
+  #apaquarto-typst: 
+    #keep-typ: true
+  #apaquarto-pdf:
+    # Can be jou (journal), man (manuscript), stu (student), or doc (document)
+    #documentmode: man
+    #keep-tex: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(conflicted)
+library(tidyverse)
+library(flextable)
+library(ftExtra)
+library(knitr)
+conflicts_prefer(dplyr::filter, .quiet = TRUE)
+conflicts_prefer(flextable::separate_header, .quiet = TRUE)
+```
+
+
+## Displaying Tables
+
+We can make a table the same way as a figure. Generating a table that conforms to APA format in all document formats can be tricky. When the table is simple, the `kable` function from knitr works well. Feel free to experiment with different methods, but I have found that David Gohel's [flextable](https://davidgohel.github.io/flextable/) to be the best option when I need something more complex.
+
+```{r}
+#| label: tbl-mytable
+#| tbl-cap: The Table Caption
+#| apa-note: The note below the table.
+tibble(Numbers = seq(1,4), Letters = LETTERS[seq(Numbers)]) %>%
+  knitr::kable()
+
+```
+
+To refer to this table in text, use the `@` symbol followed by the reference label like so: As seen in @tbl-mytable, the first few numbers and letters of the alphabet are displayed.
+
+# Above is the template - this works just fine. Below comes my table: 
+
+```{r}
+##### Packages ####
+if (!requireNamespace("needs", quietly = TRUE)) {
+  install.packages("needs")
+}
+library(needs)
+needs(xfun, tidyverse, psych, remotes, Hmisc, flextable, gtsummary, cardx, svglite, ftExtra)
+
+
+#### Average two numbers if there is a hyphen####
+handle_hyphen <- function(data, column_name) {
+  data %>%
+    mutate(
+      {{column_name}} := ifelse(
+        is.na(.[[column_name]]), 
+        NA,  # If the value is NA, keep it as NA
+        ifelse(
+          grepl("-", .[[column_name]]), 
+          sapply(strsplit(.[[column_name]], "-"), function(x) mean(as.numeric(x), na.rm = TRUE)), 
+          ifelse(
+            .[[column_name]] == "", NA,  # Handle empty strings explicitly
+            as.character(.[[column_name]])  # Keep the rest as characters
+          )
+        )
+      )
+    )
+}
+
+
+#df <- handle_hyphen(df, "WeeklyKM_base") # example use
+#### Group similar words in a character variable ####
+# Define the function
+replace_patterns <- function(data, column_name, patterns) {
+  # Dynamically evaluate the column and apply the replacements
+  data %>%
+    mutate(
+      !!column_name := case_when(
+        # Loop through the patterns and replacements
+        !!!map2(patterns, names(patterns), function(pattern, replacement) {
+          # Create case_when conditions: if the pattern matches, replace it
+          grepl(pattern, .[[column_name]], ignore.case = TRUE) ~ replacement
+        }),
+        # Add a fallback to keep original values if no pattern matches
+        TRUE ~ .[[column_name]]
+      )
+    )
+}
+
+## Example usage
+## Define the patterns and their replacements
+#patterns <- c(  "Kraftsport" = "kraft",   "Laufen" = "lauf")
+
+## Apply the function to the 'Sport' column
+#df <- replace_patterns(df, "Sport", patterns)
+
+# Now df will have the patterns replaced in the 'Sport' column
+
+#### Create Correlation Table #####
+generate_correlation_table <- function(df, display_names) {
+  library(Hmisc)
+  library(flextable)
+  # Compute correlation matrix
+  correlation_matrix <- rcorr(as.matrix(df))
+  correlation_matrix_r <- round(correlation_matrix$r, digits = 2)
+  
+  # Extract lower triangle of the correlation matrix
+  lower_triangle <- correlation_matrix_r[lower.tri(correlation_matrix_r)]
+  
+  # Create a clean correlation matrix
+  correlation_matrix_clean <- matrix(NA, nrow = ncol(correlation_matrix_r), ncol = ncol(correlation_matrix_r))
+  correlation_matrix_clean[lower.tri(correlation_matrix_clean)] <- lower_triangle
+  
+  # Compute significance stars
+  stars_matrix <- matrix("", nrow = ncol(correlation_matrix_clean), ncol = ncol(correlation_matrix_clean))
+  stars_matrix[correlation_matrix$P < 0.01 & correlation_matrix$P > 0] <- "**"
+  stars_matrix[correlation_matrix$P >= 0.01 & correlation_matrix$P < 0.05 & correlation_matrix$P > 0] <- "*"
+  
+  # Append stars to the lower triangle of the correlation matrix
+  correlation_matrix_clean[lower.tri(correlation_matrix_clean)] <- paste(correlation_matrix_clean[lower.tri(correlation_matrix_clean)], stars_matrix[lower.tri(stars_matrix)], sep = "")
+  # Compute mean and standard deviation of variables
+  means <- colMeans(df, na.rm = T)
+  sds <- apply(df, 2, sd, na.rm = T)# 2 stands for "colums" here
+  
+  # Create data frame
+  correlation_df <- data.frame(Measure = display_names, Mean = means,SD = sds, correlation_matrix_clean)
+  
+  colnames(correlation_df)[4:ncol(correlation_df)] <- as.character(1:ncol(correlation_matrix_clean))
+  
+  # Create flextable
+  flextable(correlation_df) %>%
+    theme_apa() %>%
+    line_spacing(part = "all") %>%
+    padding(padding.top = 5, padding.bottom = 5)
+}
+
+## Example usage
+#correlation_names <- c("Age", "Gender","Weekly Kilometers")
+#x<-generate_correlation_table(df[,c("Age","Gender","WeeklyKM_base")], correlation_names)
+#### Generate mean values for values wit 
+
+# Define the function
+#df$mean_goals <- rowMeans(df[, grepl("goal", names(df),ignore.case = T)], na.rm = TRUE)
+mean_by_pattern<-function(df,searchstring){
+  new_var <- rowMeans (df[,grepl(searchstring, names (df), ignore.case = T)], na.rm = T)
+  return(new_var)
+}
+#df$meannew<-mean_by_pattern(df,"goal") #example use
+####Descriptives-Funktion: Berechnet Typische deskriptive Werte für alle Variablen eines gegebenen Datensatzes: ######
+#Calculate mean, sd, range, min, max of all variables. 
+library(dplyr)
+
+mean_sd_median_min_max <- function(df) {
+  result <- df %>%
+    # Select only numeric columns
+    select(where(is.numeric)) %>%
+    # Summarise with the desired statistics
+    summarise(across(everything(), 
+                     list(mean = ~round(mean(., na.rm = TRUE), digits = 2), 
+                          sd = ~round(sd(., na.rm = TRUE), digits = 2),
+                          median = ~round(median(., na.rm = TRUE), digits = 2),
+                          min = ~min(., na.rm = TRUE),
+                          max = ~max(., na.rm = TRUE))))
+  
+  # Create named list
+  result_list <- setNames(as.list(result), paste(names(result), sep = ""))
+  
+  return(result_list)
+}
+#descriptives_list<-mean_sd_median_min_max(df)
+
+
+
+```
+
+```{r}
+load(magic_path("241021PRIMOCA_data.Rdata"))
+#all.equal(df_from_xlsx1,df)# TRUE, no complications
+#### Removing NA's#####
+df<-df %>% filter(Programme == 1)
+#### Grouping the different kinds of sports and goals ####
+df$Sport2 <- NA
+df$Sport2[19] <- "Laufen" # Here, I add a second sport for participant 19
+patterns <- c(  "Kraftsport" = "kraft",   "Laufen" = "lauf")
+df <- replace_patterns(df, "Sport", patterns)# See the script "Functions.R" to examine the function
+df <- handle_hyphen(df, "WeeklyKM_base")# See the script "Functions.R" to examine the function
+df <- df %>%
+  mutate(
+    WeeklyH_base = gsub(",", ".", WeeklyH_base)
+  )
+df <- handle_hyphen(df, "WeeklyH_base")
+df$Goal_ave <- mean_by_pattern(df, "goal")
+df$Commit_ave <- mean_by_pattern(df, "commit")
+df$SessionKM_ave <- mean_by_pattern(df, "sessionkm")
+df$SesseionH_ave <- mean_by_pattern(df, "sessionh")
+df$SessionRPE_ave <- mean_by_pattern(df, "sessionrpe")
+df$Pride_ave <- mean_by_pattern(select(df,-Pride_base), "pride")
+df$Pride_hubris <- mean_by_pattern(select(df,-Hubris_base), "hubris")
+df$PA_ave <- mean_by_pattern(select(df,-PA_base), "pa_")
+df$NA_ave <- mean_by_pattern(select(df,-NA_base), "na_")
+
+
+df <- df %>%
+  mutate(Gender = recode(Gender, "1" = "Männlich", "2" = "Weiblich", "3" = "Divers"))
+
+```
+
+```{r}
+#demographics table
+demographicsdata<- select(df, Age, Gender, Sport) %>% tbl_summary( percent = "column", by = Gender) %>%  add_p() %>% add_overall()
+
+data <- as.data.frame(demographicsdata) %>%
+  rename_with(~ gsub("\\*\\*", "", .)) # To remove the asterisks from the headers. 
+
+demographicstable<- data %>%
+  flextable() %>%
+  set_table_properties(layout = "autofit") %>%
+  height(height = 0.3, part = "body") %>%  # Set row height for body
+  height(height = 0.5, part = "header") %>% # Set row height for header
+  font(fontname = "Times New Roman", part = "all") %>%
+  fontsize(size = 12, part = "all") %>%
+  align(align = "center", part = "header") %>%
+  align(align = "center", part = "body")
+
+```
+
+
+```{r apatb-demogrtable}
+
+#| label: tbl-demogrtable
+#| tbl-cap: Tabelle der Absoluten und Relativen Häufigkeiten Demografischer Variablen in der Stichprobe
+#| apa-note: Die Sportarten wurden in einer offenen Frage erfragt. Eine männliche Person gab zwei Sportarten an — Kraftsport und Laufen. Es wurde hier die erste Antwort (Kraftsport) gezählt. 
+#| 
+demographicstable
+
+```
+
+# Until here, everything works fine. As soon as I add the cross reference here, I get the error.
+@tbl-demogrtable
