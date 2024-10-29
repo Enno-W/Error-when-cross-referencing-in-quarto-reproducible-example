@@ -1,10 +1,10 @@
-processing file: CrossReference-Error_example.qmd
+processing file: X.qmd
                                                                                                               
-output file: CrossReference-Error_example.knit.md
+output file: X.knit.md
 
 pandoc 
   to: html
-  output-file: CrossReference-Error_example.html
+  output-file: X.html
   standalone: true
   section-divs: true
   html-math-method: katex
@@ -65,7 +65,7 @@ metadata
       corresponding: true
       orcid: 0000-0000-0000-0001
       email: sm@example.org
-      url: https://example.org/
+      url: 'https://example.org/'
       roles:
         - conceptualization
         - writing
@@ -159,7 +159,7 @@ metadata
   crossref-exr-title: "Exercise"
   crossref-fig-prefix: "Figure"
   crossref-fig-title: "Figure"
-  crossref-index-file: "C:/Users/enno_/AppData/Local/RStudio/quarto-crossref/FE66473B"
+  crossref-index-file: "C:/Quarto_crossreferror_reproduce/.Rproj.user/4B40D2CC/quarto-crossref/7F89DBF5"
   crossref-lem-prefix: "Lemma"
   crossref-lem-title: "Lemma"
   crossref-lof-title: "List of Figures"
@@ -191,16 +191,16 @@ metadata
   html-math-method: "katex"
   include-after: {}
   include-after-body: {
-    [1] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/4727c25b0b0f61a3.html"
-    [2] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/b04b09f9c7ef9d81"
-    [3] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/bafb923664b6ec3e.html"
+    [1] "C:/Users/enno_/AppData/Local/Temp/quarto-session1b1c8cf837f5a1d8/ea35cb911540abb8/a7fb53456d263b82.html"
+    [2] "C:/Users/enno_/AppData/Local/Temp/quarto-session1b1c8cf837f5a1d8/ea35cb911540abb8/708f427f442cfbed"
+    [3] "C:/Users/enno_/AppData/Local/Temp/quarto-session1b1c8cf837f5a1d8/ea35cb911540abb8/8a7a7cee34e1bbcf.html"
   }
   include-before: {}
   include-before-body: {
-    [1] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/691238283171f835.html"
+    [1] "C:/Users/enno_/AppData/Local/Temp/quarto-session1b1c8cf837f5a1d8/ea35cb911540abb8/e34a956b05a9e082.html"
   }
   include-in-header: {
-    [1] "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/5fa065cdee68c136/file2cd866c8813"
+    [1] "C:/Users/enno_/AppData/Local/Temp/quarto-session1b1c8cf837f5a1d8/ea35cb911540abb8/232df1801cdf2b64/file810875474cc"
   }
   language: {
     appendix-attribution-bibtex: "BibTeX citation:"
@@ -315,162 +315,157 @@ metadata
     tools-download: "Download"
     tools-share: "Share"
   }
-  mediabag-dir: "CrossReference-Error_example_files\mediabag"
+  mediabag-dir: "X_files\mediabag"
   output-divs: true
   pdf-engine: "pdflatex"
   project-offset: "."
-  quarto-cli-path: "C:\Users\enno_\AppData\Local\Programs\Quarto\bin\quarto.exe"
-  quarto-environment: {
-    paths: {
-      Rscript: "C:\Program Files\R\R-4.4.1\bin\x64\Rscript.exe"
-    }
-  }
+  quarto-cli-path: "C:\RStudio\RESOUR~1\app\bin\quarto\bin\quarto.exe"
   quarto-filters: {
     afterQuartoFilters: {}
     beforeQuartoFilters: {}
     entryPoints: {
       [1] {
         at: "pre-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apalanguage.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apalanguage.lua"
       }
       [2] {
         at: "pre-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\crossrefprefix.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\crossrefprefix.lua"
       }
       [3] {
         at: "pre-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafloatstoend.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apafloatstoend.lua"
       }
       [4] {
         at: "pre-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafgtb.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apafgtb.lua"
       }
       [5] {
         at: "pre-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\journalmode.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\journalmode.lua"
       }
       [6] {
         at: "pre-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafigurewidthlatex.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apafigurewidthlatex.lua"
       }
       [7] {
         at: "pre-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafigurelatex.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apafigurelatex.lua"
       }
       [8] {
         at: "pre-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaomitrefsdiv.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apaomitrefsdiv.lua"
       }
       [9] {
         at: "post-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apamasked.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apamasked.lua"
       }
       [10] {
         at: "post-ast"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apatwocolumnlatex.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apatwocolumnlatex.lua"
       }
       [11] {
         at: "pre-quarto"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaheader.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apaheader.lua"
       }
       [12] {
         at: "pre-quarto"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apastriptitle.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apastriptitle.lua"
       }
       [13] {
         at: "pre-quarto"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\frontmatter.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\frontmatter.lua"
       }
       [14] {
         at: "pre-quarto"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaquote.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apaquote.lua"
       }
       [15] {
         at: "pre-quarto"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\latexnoindent.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\latexnoindent.lua"
       }
       [16] {
         at: "pre-quarto"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafigtblappendix.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apafigtblappendix.lua"
       }
       [17] {
         at: "post-quarto"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafloatlatex.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apafloatlatex.lua"
       }
       [18] {
         at: "post-quarto"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaoneauthoraffiliation.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apaoneauthoraffiliation.lua"
       }
       [19] {
         at: "post-render"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaextractfigure.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apaextractfigure.lua"
       }
       [20] {
         at: "post-render"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apanote.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apanote.lua"
       }
       [21] {
         at: "post-render"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apafloat.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apafloat.lua"
       }
       [22] {
         at: "post-render"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apacaption.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apacaption.lua"
       }
       [23] {
         at: "post-render"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaafternote.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apaafternote.lua"
       }
       [24] {
         at: "post-render"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\citeprocr.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\citeprocr.lua"
       }
       [25] {
         at: "post-render"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaandcite.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apaandcite.lua"
       }
       [26] {
         at: "post-render"
-        path: "C:\Daten\Quarto_crossreferror_reproduce\APA\_extensions\wjschne\apaquarto\apaappendixlatex.lua"
+        path: "C:\Quarto_crossreferror_reproduce\_extensions\wjschne\apaquarto\apaappendixlatex.lua"
       }
     }
     quartoFilters: {
-      [1] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\filters\main.lua"
+      [1] "C:\RStudio\RESOUR~1\app\bin\quarto\share\filters\main.lua"
     }
   }
-  quarto-source: "CrossReference-Error_example.qmd"
-  quarto-version: "1.6.32"
+  quarto-source: "X.qmd"
+  quarto-version: "1.5.57"
   quarto_profile: {}
-  results-file: "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/233f69c33e2aaa0e"
+  results-file: "C:/Users/enno_/AppData/Local/Temp/quarto-session1b1c8cf837f5a1d8/ea35cb911540abb8/e8c69baf494b0d2c"
   shortcodes: {
-    [1] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\extensions\quarto\kbd\kbd.lua"
-    [2] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\extensions\quarto\lipsum\lipsum.lua"
-    [3] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\extensions\quarto\placeholder\placeholder.lua"
-    [4] "C:\Users\enno_\AppData\Local\Programs\Quarto\share\extensions\quarto\video\video.lua"
+    [1] "C:\RStudio\RESOUR~1\app\bin\quarto\share\extensions\quarto\kbd\kbd.lua"
+    [2] "C:\RStudio\RESOUR~1\app\bin\quarto\share\extensions\quarto\lipsum\lipsum.lua"
+    [3] "C:\RStudio\RESOUR~1\app\bin\quarto\share\extensions\quarto\placeholder\placeholder.lua"
+    [4] "C:\RStudio\RESOUR~1\app\bin\quarto\share\extensions\quarto\video\video.lua"
   }
   tbl-colwidths: "auto"
   text-highlighting: true
-  timings-file: "C:/Users/enno_/AppData/Local/Temp/quarto-session9e7e43824622254f/d44260125bcf6384/8fa726135ca17465"
+  timings-file: "C:/Users/enno_/AppData/Local/Temp/quarto-session1b1c8cf837f5a1d8/ea35cb911540abb8/4a84dbdf71cf9f67"
   toc-title-document: "Table of contents"
 }
-Error running filter C:/Users/enno_/AppData/Local/Programs/Quarto/share/filters/main.lua:
+Error running filter C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:
 string expected, got nil
 	while retrieving function argument text
 	while retrieving arguments for function Str
 stack traceback:
-	...\APA\_extensions\wjschne\apaquarto\apafigtblappendix.lua:67: in function <...\APA\_extensions\wjschne\apaquarto\apafigtblappendix.lua:34>
+	...duce\_extensions\wjschne\apaquarto\apafigtblappendix.lua:67: in function <...duce\_extensions\wjschne\apaquarto\apafigtblappendix.lua:34>
 	[C]: in ?
 	[C]: in method 'walk'
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:558: in local 'checked_walk'
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:610: in function 'run_emulated_filter'
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1335: in local 'callback'
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:557: in local 'checked_walk'
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:609: in function 'run_emulated_filter'
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:1334: in local 'callback'
 	[string "..."]:1888: in field 'withScriptFile'
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1351: in upvalue 'run_emulated_filter_chain'
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1389: in function <...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1386>
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:1350: in upvalue 'run_emulated_filter_chain'
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:1388: in function <C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:1385>
 stack traceback:
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:558: in local 'checked_walk'
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:610: in function 'run_emulated_filter'
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1335: in local 'callback'
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:557: in local 'checked_walk'
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:609: in function 'run_emulated_filter'
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:1334: in local 'callback'
 	[string "..."]:1888: in field 'withScriptFile'
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1351: in upvalue 'run_emulated_filter_chain'
-	...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1389: in function <...no_/AppData/Local/Programs/Quarto/share/filters/main.lua:1386>
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:1350: in upvalue 'run_emulated_filter_chain'
+	C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:1388: in function <C:/RStudio/RESOUR~1/app/bin/quarto/share/filters/main.lua:1385>
